@@ -1,7 +1,5 @@
-// src/components/Signup.js
+
 import React, { useState } from "react";
-import { auth, googleProvider, facebookProvider } from "../firebase";
-import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 
 function Signup() {
   const [email, setEmail] = useState("");
@@ -17,8 +15,6 @@ function Signup() {
     }
   };
 
-  const handleGoogle = () => signInWithPopup(auth, googleProvider);
-  const handleFacebook = () => signInWithPopup(auth, facebookProvider);
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
@@ -46,13 +42,11 @@ function Signup() {
           </button>
         </form>
         <button
-          onClick={handleGoogle}
           className="w-full mt-3 bg-red-500 text-white p-2 rounded"
         >
           Sign up with Google
         </button>
         <button
-          onClick={handleFacebook}
           className="w-full mt-2 bg-blue-700 text-white p-2 rounded"
         >
           Sign up with Facebook
